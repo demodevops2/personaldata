@@ -1,0 +1,12 @@
+#######################  Install Boto and Boto3 using pip #####################
+
+#sudo python -m pip install boto3
+#sudo python -m pip install boto
+#sudo python -m pip install awscli
+
+
+#################### Ref Link #################################################
+
+Ref Link: https://github.com/jeremievallee/ansible-aws-vpc/blob/master/2-private-vpc/roles/vpc/tasks/main.yml
+
+
