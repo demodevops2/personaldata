@@ -1,0 +1,6 @@
+FROM ubuntu:latest
+RUN apt-get update
+RUN apt-get install apache2 -y
+RUN echo 'Web site Hosted inside a container' > /var/www/html/index.html
+RUN echo 'apache2ctl start' >> /root/.bashrc
+EXPOSE 80
