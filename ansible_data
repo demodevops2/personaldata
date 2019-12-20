@@ -1,1 +1,11 @@
-test
+############## Ansible Roles, Templates and Tags ###############
+
+--> Roles are next level of ansible playbooks
+--> we can re-use playbooks for different purposes, you can segregated server functionality, you can easy to maintain/trobleshooting playbooks.
+
+handlers: event handlers (let's say you got one task once that task is finish succesfully it will call that handler or it will perform some actions).
+depending upon your configuration).
+meta: role dependencies
+templates: similar to files, but it contains dynamic data.
+
+
