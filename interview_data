@@ -1,0 +1,22 @@
+###############################   Linux  #############################################
+
+1. Recursively list all files in a directory including files in symlink directories ?
+--> #ls -LR
+
+
+
+
+
+
+
+
+
+
+
+
+##############################  DevOps ################################################
+
+1. Changing git commit message after push ?
+--> #git commit --amend
+
+2. 
