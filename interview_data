@@ -3,6 +3,9 @@
 1. Recursively list all files in a directory including files in symlink directories ?
 --> #ls -LR
 
+2. If process is running or not on Linux ?
+--> #pgrep nginx , # pgrep apache2, #pidof nginx
+
 
 
 
