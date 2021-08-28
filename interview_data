@@ -14,7 +14,34 @@
     In another way, you can simply create Array by assigning elements --> #test_array=(apple orange lemon)
     Bash array elements can be accessed using index number starts from 0 then 1,2,3…n. 
     #echo ${test_array[0]}
-    apple
+    apple.
+    
+ 4. How to check if file or directory exist or not in Bash ?
+ --> FILE=/etc/resolv.conf
+     if [ -f "$FILE" ]; then
+        echo "$FILE exists."
+     else 
+        echo "$FILE does not exist."
+     fi
+     ........................................
+     Check if Directory Exist -->
+     FILE=/etc/docker
+     if [ -d "$FILE" ]; then
+        echo "$FILE is a directory."
+     fi
+     
+  5. Shell script to watch the disk space ?
+  --> #!/bin/sh
+      df -H | grep -vE '^Filesystem|tmpfs|cdrom' | awk '{ print $5 " " $1 }' | while read output;
+      do
+        echo $output
+        usep=$(echo $output | awk '{ print $1}' | cut -d'%' -f1  )
+        partition=$(echo $output | awk '{ print $2 }' )
+        if [ $usep -ge 90 ]; then
+          echo "Running out of space \"$partition ($usep%)\" on $(hostname) as on $(date)" |
+          mail -s "Alert: Almost out of disk space $usep%" you@somewhere.com
+        fi
+      done
 
 
 
