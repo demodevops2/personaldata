@@ -107,9 +107,21 @@ Sets: Unordered collection of unique objects.
 
 
 
-##############################  DevOps ################################################
+##############################  DevOps #################################################################
+
+##############################  GIT ############################################
 
 1. Changing git commit message after push ?
 --> #git commit --amend
 
-2. 
+
+
+##############################  Docker ##########################################
+
+1. How to check memory and CPU utilization of docker running contanier ?
+--> # docker stats (Note: by default limit you see is the total memory of the VM in which docker runs.)
+      By default, Docker containers have access to the full RAM and CPU resources of the host.
+      
+2. Limit Docker Container Memory Access and CPU ?
+--> #docker run -it --memory="1g" ubuntu
+    #docker run -it --cpus="1.0" ubuntu 
