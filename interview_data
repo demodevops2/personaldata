@@ -53,6 +53,10 @@
            counter=$(( $counter - 1 ))
         done
         echo $factorial
+	
+   7. Cron job log file location in linux ?
+   --> Sometimes it can be useful to continuously monitor it, in that case:
+       tail -f /var/log/syslog | grep CRON
 
 
 
@@ -125,3 +129,50 @@ Sets: Unordered collection of unique objects.
 2. Limit Docker Container Memory Access and CPU ?
 --> #docker run -it --memory="1g" ubuntu
     #docker run -it --cpus="1.0" ubuntu 
+    
+##############################  K8s ###############################################
+
+1. Difference between job and cron jobs in kubernetes ?
+--> Kubernetes Jobs are used to create transient pods that perform specific tasks they are assigned to.
+    CronJobs do the same thing, but they run tasks based on a defined schedule. 
+    Jobs play an important role in Kubernetes, especially for running batch processes or important ad-hoc operations.
+    
+    Kubernetes Jobs:
+    Here is a snippet of the file that you can use to create an example Kubernetes Job:
+    ---
+    apiVersion: batch/v1          ## The version of the Kubernetes API
+    kind: Job                     ## The type of object for jobs
+    metadata:
+      name: job-test
+    spec:                        ## What state you desire for the object
+      template:
+        metadata:
+          name: job-test
+        spec:
+          containers:
+          - name: job
+            image: busybox                  ##  Image used
+            command: ["echo", "job-test"]   ##  Command used to create logs for verification later
+	  restartPolicy: OnFailure          ##  Restart Policy in case container failed
+	  
+Kubernetes CronJobs:
+
+apiVersion: batch/v1beta1            ## The version of the Kubernetes API
+kind: CronJob                        ## The type of object for Cron jobs
+metadata:
+  name: cron-test
+spec:
+  schedule: "*/1 * * * *"            ## Defined schedule using the *nix style cron syntax
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: cron-test
+            image: busybox            ## Image used
+            args:
+           - /bin/sh
+            - -c
+            - date; echo Hello this is Cron test
+          restartPolicy: OnFailure    ##  Restart Policy in case container failed
+	  
