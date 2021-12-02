@@ -176,3 +176,12 @@ spec:
             - date; echo Hello this is Cron test
           restartPolicy: OnFailure    ##  Restart Policy in case container failed
 	  
+	  
+2. Difference between Deployment and Replica set?
+--> ReplicaSet ensures that a specified number of pod replicas are running at any given time. 
+    However, Deployment is a higher-level concept that manages ReplicaSets and provides declarative updates to Pods along with a lot of other useful features.
+    
+3. What is daemonset ?	
+-->  It is used to ensure that some or all of your pods are scheduled and running on every single available node. 
+     This essentially runs a copy of the desired pod across all nodes.
+     When a new node is added to a Kubernetes cluster, a new pod will be added to that newly attached node.
