@@ -57,6 +57,21 @@
    7. Cron job log file location in linux ?
    --> Sometimes it can be useful to continuously monitor it, in that case:
        tail -f /var/log/syslog | grep CRON
+       
+   8. What is heap memory ?
+   --> “Heap” memory, also known as “dynamic” memory, is an alternative to local stack memory. 
+        Local memory is quite automatic. 
+	Local variables are allocated automatically when a function is called, and they are deallocated automatically when the function exits. 
+	Heap memory is different in every way.
+	
+	Heap memory is a part of memory allocated to JVM, which is shared by all executing threads in the application.
+	
+	All Stack and heap memory is part of the ram memory. According to the variable declaration in the program and function call the memory is allocated.
+	
+   9. What is load balancer ?
+   --> efficiently distributing incoming network traffic across a group of backend servers, also known as a server farm or server pool.
+   
+   10. 
 
 
 
