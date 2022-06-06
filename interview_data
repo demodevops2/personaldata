@@ -6,6 +6,9 @@
 2. If process is running or not on Linux ?
 --> #pgrep nginx , # pgrep apache2, #pidof nginx
 
+--> Retrieve CPU usage and memory usage of a single process on Linux?
+    #ps -p <pid> -o %cpu,%mem
+
 3. Create and Use Array in Bash Script ?
 --> You have two ways to create a new array in bash script. 
     The first one is to use declare command to define an Array. This command will define an associative array named test_array.
