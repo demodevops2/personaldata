@@ -74,7 +74,10 @@
    9. What is load balancer ?
    --> efficiently distributing incoming network traffic across a group of backend servers, also known as a server farm or server pool.
    
-   10. 
+   10. find and remove files bigger than a specific size and type ?
+   #find -type f \( -name "*zip" -o -name "*tar" -o -name "*gz" \) -size +1M -exec rm {} +
+   --> the \( \) construct allows to group different filename patterns
+   -->  As Eric Renouf notes, if your version of find doesn't support the -delete option, use the -exec option
 
 
 
