@@ -78,6 +78,12 @@
    #find -type f \( -name "*zip" -o -name "*tar" -o -name "*gz" \) -size +1M -exec rm {} +
    --> the \( \) construct allows to group different filename patterns
    -->  As Eric Renouf notes, if your version of find doesn't support the -delete option, use the -exec option
+   
+   11. Prevent files from accidental deletion in Linux ?
+   #chattr +i file.txt
+   -->  "i" attribute which makes the file immutable. It means - you can't delete, modify the file, even if you're the file owner and the root user.
+   --> To revoke attributes, just use "-i" 
+   #chattr -i file.txt
 
 
 
